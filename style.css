@@ -1,0 +1,68 @@
+/* Styles go here */
+body {
+    font-family: Calibri;
+}
+
+h2 {
+  font-family: calibri;
+  background-color: lightskyblue;
+}
+
+table {
+
+  width: 100%;
+  max-width: 600px;
+  padding-right: 20px;
+}
+
+p, #chartContainer {
+  max-width: 800px;
+}
+
+
+
+div.outcome {
+  display: none;
+}
+
+div.outcome td + td {
+  background-color:LavenderBlush;
+  font-size: .81em;
+  border-style:solid;
+  border-color: #D3D3D3;
+  border-width: 1px;
+}
+
+.btn{
+  text-align:right;
+  border-radius: 4px;
+  cursor:pointer;
+  font-size: .85em;
+}
+
+.required {
+  background-color:aliceblue;
+  color:blue;
+  border-style:solid;
+  border-color: #D3D3D3;
+  border-width: 1px;
+}
+
+table tbody tr td:first-child {
+  padding-right: 10px;
+}
+
+table tbody tr td:nth-child(2)
+{
+    text-align:right;
+    font-size: .9em;
+    width: 30%;
+}
+    
+input {
+  text-align:right;
+  background-color:white;
+  border-style:none;
+  max-width:120px;
+  width:100%;
+}
