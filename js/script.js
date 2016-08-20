@@ -1,7 +1,7 @@
 // Code goes here
 
 var myFunction =function(){
-	return false;
+	
 	var formdata = {};
   $('.btn').text("Resubmit");
   $('.btn').css("background-color","palegreen");
