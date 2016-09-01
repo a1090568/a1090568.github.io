@@ -1,43 +1,51 @@
-/* Styles go here */
-body {
-    font-family: Calibri;
+@media only screen and (max-width: 400px) {
+  input {
+    width:60px;
+    height:40px;
+  }
+  #chartContainer {
+    height:250px;
+  }
 }
 
-h2 {
-  font-family: calibri;
-  background-color: lightskyblue;
+@media only screen and (max-width: 800px) {
+  input {
+    height:30px;
+  }
 }
 
-table {
-
+.input, #chartContainer, .outcome {
   width: 100%;
   max-width: 600px;
-  padding-right: 20px;
+  }
+
+#chartContainer {
+
 }
 
-p, #chartContainer {
-  max-width: 800px;
+.outcome {
+  position:relative;
+  left:-3000px;
 }
 
 
-
-div.outcome {
-  display: none;
+input {
+  max-width:100px;
 }
 
-div.outcome td + td {
-  background-color:LavenderBlush;
-  font-size: .81em;
-  border-style:solid;
-  border-color: #D3D3D3;
-  border-width: 1px;
+table, form {
+  width:100%;
 }
 
-.btn{
-  text-align:right;
-  border-radius: 4px;
-  cursor:pointer;
-  font-size: .85em;
+table tbody tr td:first-child {
+  padding-right: 10px;
+}
+
+table tbody tr td:nth-child(2), input
+{
+    text-align:right;
+    background-color:white;
+    border: none;
 }
 
 .required {
@@ -48,21 +56,21 @@ div.outcome td + td {
   border-width: 1px;
 }
 
-table tbody tr td:first-child {
-  padding-right: 10px;
+#final_recommendation {
+
+  padding: 12px;
 }
 
-table tbody tr td:nth-child(2)
-{
-    text-align:right;
-    font-size: .9em;
-    width: 30%;
+body {
+  font-family: Calibri;
 }
-    
-input {
-  text-align:right;
-  background-color:white;
-  border-style:none;
-  max-width:120px;
-  width:100%;
+
+#nominal_required_income, #required_balance, #retirement_balance, #actual_income  {
+  font-size: 0.9em;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

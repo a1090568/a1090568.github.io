@@ -10,37 +10,41 @@
     
     <script src="js/script.js"></script>
     <script src="js/finance.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
+    
     <h2>
-      <i>Can I Retire?</i>
+      Can I Retire?
     </h2>
     <p>Will you have saved enough money to retire? To find out please enter your details in the blue fields:</p>
+    
+    <div class="input">
     <form>
-      <hr />
-      <h4>My finances today:</h4>
-      <table>
+      <hr>
+        <table>
+        <thead><tr><td><h4>  <em>My finances today:</em></h4></td></tr></thead>
         <tbody>
           <tr>
             <td> Super balance: $</td>
-            <td> <input autofocus="" class="required" type="text" name="current_savings" value="200000" required="" /> </td>
+            <td> <input autofocus="" class="required" type="number" name="current_savings" value="200000" required="" /> </td>
           </tr>
           <tr>
             <td> Salary income: $ </td>
-            <td> <input class="required" type="text" name="current_income" value="50000" required="" /></td>
+            <td> <input class="required" type="number" name="current_income" value="50000" required="" /></td>
           </tr>
            <tr>
             <td> Years to retirement:</td>
-            <td> <input class="required" type="text" name="years_to_retirement" value="25" required="" /></td>
+            <td> <input class="required" type="number" name="years_to_retirement" value="25" required="" /></td>
           </tr>
           <tr>
             <td> Contribution rate: %</td>
-            <td><input type="text" name="contribution_rate" value="9.5" disabled="" /></td>
+            <td><input type="number" name="contribution_rate" value="9.5" disabled="" /></td>
           </tr>
           <tr>
             <td>  Extra contributions per year: $ </td>
-            <td> <input class="required" type="text" name="extra_contribution" value="0" required="" />
+            <td> <input class="required" type="number" name="extra_contribution" value="0" required="" />
             </td>
           </tr>
           <tr>
@@ -48,29 +52,29 @@
           </tr>
           <tr>
             <td> Fees: %</td>
-            <td><input class="required" type="text" name="fees" value="1.0" required="" /></td>
+            <td><input class="required" type="number" name="fees" value="1.0" required="" /></td>
           </tr>
           <tr>
             <td> Expected investment return: %</td>
-            <td><input type="text" name="return" value="7.0" disabled="" /></td>
+            <td><input type="number" name="return" value="7.0" disabled="" /></td>
           </tr>
           <tr>
             <td> Tax rate: %</td>
-            <td><input type="text" name="tax" value="15.0" disabled="" /></td>
+            <td><input type="number" name="tax" value="15.0" disabled="" /></td>
           </tr>
           <tr>
             <td> Inflation: %</td>
-            <td><input type="text" name="inflation" value="2.0" disabled="" /></td>
+            <td><input type="number" name="inflation" value="2.0" disabled="" /></td>
           </tr>
 
           <tr><td><h4>When retired I need:</h4></td></tr>
           <tr>
             <td>      Required income (real): $</td>
-            <td><input class="required" type="text" name="required_income" value="40000" /></td>
+            <td><input class="required" type="number" name="required_income" value="40000" /></td>
           </tr>
           <tr>
             <td>Years required</td>
-            <td><input type="text" name="years_required" value="40" disabled=""/></td>
+            <td><input type="number" name="years_required" value="40" disabled=""/></td>
           </tr>
           <tr>
             <td><br /></td>
@@ -78,18 +82,19 @@
           <tr>
             <td></td>
             <td>
-              <button class="btn" onclick="myFunction(); return false;">Submit!</button>
+              <button class="btn"  type="button" onclick="myFunction();">Submit!</button>
             </td>
           </tr>
         </tbody>
       </table>
     </form>
-    <br />
-    <hr />
-
+  </div> 
+ 
     <div class="outcome">
-      <h4>  <em>Outcome:</em></h4>
-      <table>
+      <br>
+      <hr>
+      <table >
+        <thead><tr><td><h4>  <em>Outcome:</em></h4></td></tr></thead>
         <tbody>
           <tr>
             <td>Retirement income needed (after infl): $</td>
@@ -97,7 +102,7 @@
           </tr>
           <tr>
             <td>Super balance needed: $</td>
-            <td id="required_balance"></td>
+            <td id="required_balance"/></td>
           </tr>
           <tr>
             <td>
@@ -115,11 +120,12 @@
         </tbody>
       </table>
       <br>
-      <strong><p id="final_recommendation"><p></strong>
       <hr>
-      <br/>
-      <div id="chartContainer" style="width:100%; height:280px"></div>
+      <p id="final_recommendation"><p>
+        <hr>
+        <br>
     </div>
+    <div id="chartContainer"></div>
   </body>
 
 </html>

@@ -40,10 +40,15 @@ var myFunction =function(){
     $('#final_recommendation').css("color","red");
     var reqd_extra_contribution = 1/(1-formdata.tax/100)*PMT(return_in_accum, formdata.years_to_retirement, formdata.current_savings, -1*required_balance)-formdata.current_income*formdata.contribution_rate/100;
     $('#final_recommendation').text("Unfortunately you are short! You need to contribute an extra $" + accounting.formatMoney(reqd_extra_contribution,'',0) + " each year to meet your retirement goals.");
+    $('#actual_income').prepend('<span style="color:red;">&#x2717 </span>');
+    $('#retirement_balance').prepend('<span style="color:red">&#x2717 </span>');
+    
   }
   if (required_balance <= retirement_balance) {
     $('#final_recommendation').text("Good news! You are projected to have enough savings for retirement.");
     $('#final_recommendation').css("color","blue");
+    $('#actual_income').prepend('<span style="color:green;">&#10003 </span>');
+    $('#retirement_balance').prepend('<span style="color:green;">&#10003 </span>');
   }
 
 
@@ -54,9 +59,9 @@ var myFunction =function(){
     formdata.current_savings,
     contributions_post_tax);
     var low_fee_benefit = low_fee_retirement_balance - retirement_balance
-   $('#final_recommendation').append('It may be worth having a look at your fees. If you can get your fees down to 0.6%, you could have an extra $' + accounting.formatMoney(low_fee_benefit,'',0) + ' at retirement.');
+   $('#final_recommendation').append(' Remember that fees are important, if you could get your fees down to 0.6%, you could have an extra $' + accounting.formatMoney(low_fee_benefit,'',0) + ' at retirement.');
   }
-  $('div.outcome').css("display","inline");
+  $('.outcome').css("left","0px");
 
 
   // work out datapoints before retirement
@@ -150,10 +155,10 @@ var chart = new CanvasJS.Chart("chartContainer",
   });
   
   chart.render();
-alert('pause');
+
 
 };
 
 // make forms mobile friendly
 // work out how to email it out???
-
+// ,
